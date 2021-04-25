@@ -1,0 +1,47 @@
+<div>
+    <form [formGroup]="registrationForm" (ngSubmit)="onFormSubmit()">
+        <div class="container">
+            <div class="row justify-content-md-center">
+                <img src="assets/images/logo.png" class="mx-auto d-block" alt="logo" style="width: 80px;">
+            </div>
+            <div class="row justify-content-md-center">
+                <img src="assets/images/text.png" class="mx-auto d-block" alt="text" style="width: 220px;">
+            </div>
+            <div class="row justify-content-md-center">
+                Remember nothing is important.
+            </div>
+            <div class="row justify-content-md-center">
+                <input class="form-control form-control-sm"
+                [class.is-invalid] = "name?.invalid && name?.touched"
+                formControlName="name" placeholder="Name">
+                <small *ngIf="name?.errors?.required && name?.touched" class="text-danger">Name is required!</small>
+            </div>
+            <div class="row justify-content-md-center">
+                <input class="form-control form-control-sm"
+                [class.is-invalid] = "userName?.invalid && userName?.touched" 
+                formControlName="userName" placeholder="Username">
+                <small *ngIf="userName?.errors?.required && userName?.touched" class="text-danger">Username is required!</small>
+            </div>
+            <div class="row justify-content-md-center">
+                <input class="form-control form-control-sm" 
+                [class.is-invalid] = "email?.invalid && email?.touched"
+                formControlName="email" placeholder="Email">
+                <small *ngIf="email?.errors?.required && email?.touched" class="text-danger">example@example.ex</small>                
+            </div>
+            <div class="row justify-content-md-center">
+                <input class="form-control form-control-sm"
+                [class.is-invalid] = "password?.invalid && password?.touched"
+                formControlName="password" placeholder="Password" type="password">
+                <small *ngIf="password?.errors?.required && password?.touched" class="text-danger">Password is required!</small>
+            </div>
+            <div class="row justify-content-md-center">
+                <button class="btn btn-primary" type="submit">Continue</button>
+            </div>
+            
+            <div class="row" style="margin-top: 30px;">
+                <div>Already have an account?</div>
+                <div><a href="">Sign in</a></div>
+            </div>
+        </div>
+      </form>
+</div>
